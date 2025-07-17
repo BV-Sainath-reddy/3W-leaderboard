@@ -1,0 +1,221 @@
+/* Main Container */
+.leaderboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1a1a2e;
+  color: #e6e6e6;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Layout */
+.main-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* History Panel (Left Side) */
+.history-panel {
+  flex: 1;
+  min-width: 300px;
+  background-color: #16213e;
+  border-radius: 8px;
+  padding: 15px;
+  height: fit-content;
+}
+
+/* Leaderboard Panel (Right Side) */
+.leaderboard-panel {
+  flex: 2;
+}
+
+/* Controls Section */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.controls select,
+.controls input {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #16213e;
+  color: white;
+}
+
+.controls button {
+  padding: 10px 20px;
+  background-color: #f72585;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.controls button:disabled {
+  background-color: #333;
+  cursor: not-allowed;
+}
+
+/* Leaderboard List */
+.leaderboard-list {
+  margin-top: 20px;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #16213e;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.leaderboard-item:hover {
+  background-color: #1e2a4a;
+}
+
+.leaderboard-item.selected {
+  background-color: rgba(76, 201, 240, 0.1);
+  border-left: 3px solid #4cc9f0;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #4cc9f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a2e;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+.user-rank {
+  font-size: 12px;
+  color: #a1a1a1;
+}
+
+.user-points {
+  color: #f72585;
+  font-weight: bold;
+}
+
+/* History Section */
+.history-section {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #16213e;
+  border-radius: 8px;
+  position: relative;
+  color: #e6e6e6;
+}
+
+.history-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #4cc9f0;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-history {
+  background: none;
+  border: none;
+  color: #f72585;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.history-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #2a3a5a;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-points {
+  color: #4cc9f0;
+  font-weight: bold;
+}
+
+.history-date {
+  color: #a1a1a1;
+  font-size: 14px;
+}
+
+.empty-history,
+.no-history {
+  color: #a1a1a1;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 50px;
+  color: #a1a1a1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .history-panel {
+    order: 2;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .controls {
+    flex-direction: column;
+  }
+
+  .leaderboard-container {
+    padding: 15px;
+  }
+}
